@@ -9,4 +9,4 @@ let gestorLibros: GestorLibro = new GestorLibro("Gestor de Libros");
 gestorLibros.agregarLibro("Martin Fierro", "José Hernández", 1970); 
 console.log(gestorLibros.getListaLibros());
 console.log(martinFierro)
-
+ 
