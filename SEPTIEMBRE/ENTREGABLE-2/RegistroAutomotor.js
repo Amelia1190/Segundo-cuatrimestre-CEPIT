@@ -13,23 +13,21 @@ var RegistroAutomotor = /** @class */ (function () {
     RegistroAutomotor.prototype.getRegistroAutomotor = function () {
         return this.listaVehiculo; // Devuelve la lista de vehículos
     };
+    // Eliminar vehículo
+    RegistroAutomotor.prototype.eliminarVehiculo = function (vehiculoAEliminar) {
+        var posVehiculo = this.listaVehiculo.indexOf(vehiculoAEliminar);
+        if (posVehiculo !== -1) {
+            this.listaVehiculo.splice(posVehiculo, 1); // Eliminar vehículo
+        }
+    };
     // Getters
     RegistroAutomotor.prototype.getListaVehiculo = function () {
         return this.listaVehiculo; // Retorna la lista de vehículos
     };
-    // Setters
-    RegistroAutomotor.prototype.setListaVehiculo = function (listaVehiculo) {
-        this.listaVehiculo = listaVehiculo;
-    };
-    // Eliminar vehículo
-    RegistroAutomotor.prototype.eliminarVehiculo = function (vehiculoAEliminar) {
-        // Verificar si el vehículo existe en la lista
-        if (vehiculoAEliminar !== undefined && this.listaVehiculo.includes(vehiculoAEliminar)) {
-            var posVehiculo = this.listaVehiculo.indexOf(vehiculoAEliminar);
-            if (posVehiculo !== -1) {
-                this.listaVehiculo.splice(posVehiculo, 1); // Eliminar el vehículo
-            }
-        }
+    // Buscar vehículo por patente en la lista
+    RegistroAutomotor.prototype.buscarVehiculoPorPatente = function (patente) {
+        var vehiculo = this.listaVehiculo.find(function (vehiculo) { return vehiculo.getPatente() === patente; });
+        return vehiculo; // Devuelve el vehículo encontrado
     };
     return RegistroAutomotor;
 }());

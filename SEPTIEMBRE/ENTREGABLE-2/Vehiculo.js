@@ -2,11 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Vehiculo = void 0;
 var Vehiculo = /** @class */ (function () {
-    function Vehiculo(marca, modelo, tipo, uso) {
+    function Vehiculo(marca, modelo, tipo, uso, patente) {
         this.marca = marca;
         this.modelo = modelo;
         this.tipo = tipo;
         this.uso = uso;
+        this.patente = patente;
     }
     // Getters
     Vehiculo.prototype.getMarca = function () {
@@ -21,6 +22,9 @@ var Vehiculo = /** @class */ (function () {
     Vehiculo.prototype.getUso = function () {
         return this.uso;
     };
+    Vehiculo.prototype.getPatente = function () {
+        return this.patente;
+    };
     // Setters
     Vehiculo.prototype.setMarca = function (marca) {
         this.marca = marca;
@@ -33,6 +37,9 @@ var Vehiculo = /** @class */ (function () {
     };
     Vehiculo.prototype.setUso = function (uso) {
         this.uso = uso;
+    };
+    Vehiculo.prototype.setPatente = function () {
+        return this.patente;
     };
     return Vehiculo;
 }());

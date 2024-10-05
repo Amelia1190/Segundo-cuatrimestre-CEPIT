@@ -5,16 +5,17 @@ export class Vehiculo {
     private modelo: string;
     private tipo: string;
     private uso: string;
+    private patente: string;// agargue patente.
 
-
-    constructor (marca: string, modelo: string, tipo: string, uso: string){
-        this.marca=marca;
-        this.modelo=modelo;
-        this.tipo= tipo;
-        this.uso= uso;
-        
+    constructor(marca: string, modelo: string, tipo: string, uso: string, patente: string) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.tipo = tipo;
+        this.uso = uso;
+        this.patente = patente;
     }
 
+   
 
 // Getters
 public getMarca(): string {
@@ -32,7 +33,9 @@ public getTipo(): string {
 public getUso(): string {
     return this.uso;
 } 
-
+public getPatente(): string{
+    return this.patente;
+}
 
 // Setters
 public setMarca(marca: string): void {
@@ -50,7 +53,8 @@ public setTipo(tipo: string): void {
 public setUso(uso: string): void {
     this.uso = uso; 
 }
+
+public setPatente(): string{
+    return this.patente;}
+
 }
-
-
-

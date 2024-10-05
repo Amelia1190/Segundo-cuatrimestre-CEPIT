@@ -1,9 +1,9 @@
+
+
 import { Vehiculo } from "./Vehiculo";
 
 export class RegistroAutomotor {
     private listaVehiculo: Vehiculo[]; // Inicializa array 
-    estaAgregado: any;
-    vehiculo: any;
 
     constructor() {
         this.listaVehiculo = [];
@@ -19,27 +19,30 @@ export class RegistroAutomotor {
         return this.listaVehiculo; // Devuelve la lista de vehículos
     }
 
+    
+    // Eliminar vehículo
+    public eliminarVehiculo(vehiculoAEliminar: Vehiculo): void {
+        const posVehiculo: number = this.listaVehiculo.indexOf(vehiculoAEliminar);
+        if (posVehiculo !== -1) {
+            this.listaVehiculo.splice(posVehiculo, 1); // Eliminar vehículo
+        }
+    }
+
     // Getters
     public getListaVehiculo(): Vehiculo[] {
         return this.listaVehiculo; // Retorna la lista de vehículos
     }
 
-    // Setters
-    public setListaVehiculo(listaVehiculo: Vehiculo[]): void {
-        this.listaVehiculo = listaVehiculo;
-    }
-
-    // Eliminar vehículo
-    public eliminarVehiculo(vehiculoAEliminar: Vehiculo): void {
-        // Verificar si el vehículo existe en la lista
-        if (vehiculoAEliminar !== undefined && this.listaVehiculo.includes(vehiculoAEliminar)) {
-            const posVehiculo: number = this.listaVehiculo.indexOf(vehiculoAEliminar);
-            if (posVehiculo !== -1) {
-                this.listaVehiculo.splice(posVehiculo, 1); // Eliminar el vehículo
-            }
+    // Buscar vehículo por patente en la lista
+    public buscarVehiculoPorPatente(patente: string): Vehiculo { 
+        const vehiculo = this.listaVehiculo.find(vehiculo => vehiculo.getPatente() === patente);
+        if (!vehiculo) {
+            throw new Error(`No se encontró ningún vehículo con la patente: ${patente}`); 
         }
+        return vehiculo; // Devuelve el vehículo encontrado
     }
-
+    
+}
 
 
   /*  // Modificar un vehiculo.
@@ -51,4 +54,5 @@ public modificarVehiculo(Vehiculo: string): void {
     public vehiculoModificado(): string {
     return this.vehiculo.vehiculoModificado();
     }*/
-}
+
+    
