@@ -38,7 +38,7 @@ var Vehiculo = /** @class */ (function () {
     Vehiculo.prototype.setUso = function (uso) {
         this.uso = uso;
     };
-    Vehiculo.prototype.setPatente = function () {
+    Vehiculo.prototype.setPatente = function (patente) {
         return this.patente;
     };
     return Vehiculo;

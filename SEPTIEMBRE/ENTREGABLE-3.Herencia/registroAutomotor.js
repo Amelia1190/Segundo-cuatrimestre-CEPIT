@@ -28,18 +28,6 @@ var RegistroAutomotor = /** @class */ (function () {
     RegistroAutomotor.prototype.buscarVehiculoPorPatente = function (patente) {
         return this.listaVehiculo.find(function (vehiculo) { return vehiculo.getPatente() === patente; });
     };
-    // Modificar un vehículo por su patente
-    RegistroAutomotor.prototype.modificarVehiculo = function (patenteActual, datosNuevos) {
-        var vehiculo = this.buscarVehiculoPorPatente(patenteActual);
-        if (vehiculo) {
-            if (datosNuevos.patente)
-                vehiculo.setPatente(datosNuevos.patente);
-            console.log("El veh\u00EDculo con patente ".concat(patenteActual, " ha sido modificado."));
-        }
-        else {
-            console.log("No se encontr\u00F3 un veh\u00EDculo con la patente: ".concat(patenteActual));
-        }
-    };
     return RegistroAutomotor;
 }());
 exports.RegistroAutomotor = RegistroAutomotor;

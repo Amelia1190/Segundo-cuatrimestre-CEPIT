@@ -1,5 +1,4 @@
-
-import { Vehiculo } from "./Vehiculo";
+import { Vehiculo } from "./vehiculo";
 
 export class RegistroAutomotor {
     private listaVehiculo: Vehiculo[]; 
@@ -30,12 +29,12 @@ export class RegistroAutomotor {
     }
 
     // Buscar vehículo por patente
-    public buscarVehiculoPorPatente(patente: string): Vehiculo {
+    public buscarVehiculoPorPatente(patente: string): Vehiculo | undefined {
         return this.listaVehiculo.find(vehiculo => vehiculo.getPatente() === patente);
     }
 
     // Modificar un vehículo por su patente
-    public modificarVehiculo(patenteActual: string, datosNuevos: { patente?: string }): void {
+   /* public modificarVehiculo(patenteActual: string, datosNuevos: { patente?: string }): void {
         const vehiculo = this.buscarVehiculoPorPatente(patenteActual);
         if (vehiculo) {
             if (datosNuevos.patente) vehiculo.setPatente(datosNuevos.patente);
@@ -44,4 +43,5 @@ export class RegistroAutomotor {
             console.log(`No se encontró un vehículo con la patente: ${patenteActual}`);
         }
     }
+        */
 }

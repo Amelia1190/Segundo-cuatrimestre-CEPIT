@@ -5,7 +5,7 @@ export class Vehiculo {
     private modelo: string;
     private tipo: string;
     private uso: string;
-    private patente: string;// agargue patente.
+    private patente: string;// agregue patente.
 
     constructor(marca: string, modelo: string, tipo: string, uso: string, patente: string) {
         this.marca = marca;
@@ -54,7 +54,7 @@ public setUso(uso: string): void {
     this.uso = uso; 
 }
 
-public setPatente(): string{
+public setPatente(patente: string): string{
     return this.patente;}
 
 }
