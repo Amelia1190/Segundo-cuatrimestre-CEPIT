@@ -9,8 +9,36 @@ var Vehiculo = /** @class */ (function () {
         this.tipo = tipo;
         this.patente = patente;
     }
-    //GETTER(LO AGREGUE PQ SINO NO ME DEJA BUSCAR UN VEHICULO POR PATENTE )
-    Vehiculo.prototype.getPatente = function () {
+    // Getters(LO AGREGUE PQ SINO NO ME DEJA BUSCAR UN VEHICULO POR PATENTE )
+    Vehiculo.prototype.getMarca = function () {
+        return this.marca;
+    };
+    Vehiculo.prototype.getModelo = function () {
+        return this.modelo;
+    };
+    Vehiculo.prototype.getTipo = function () {
+        return this.tipo;
+    };
+    Vehiculo.prototype.getUso = function () {
+        return this.uso;
+    };
+    Vehiculo.prototype.getPatente = function (patente) {
+        return this.patente;
+    };
+    // Setters
+    Vehiculo.prototype.setMarca = function (marca) {
+        this.marca = marca;
+    };
+    Vehiculo.prototype.setModelo = function (modelo) {
+        this.modelo = modelo;
+    };
+    Vehiculo.prototype.setTipo = function (tipo) {
+        this.tipo = tipo;
+    };
+    Vehiculo.prototype.setUso = function (uso) {
+        this.uso = uso;
+    };
+    Vehiculo.prototype.setPatente = function (patente) {
         return this.patente;
     };
     return Vehiculo;

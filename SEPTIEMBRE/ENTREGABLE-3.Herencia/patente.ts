@@ -11,6 +11,9 @@ export class Patente {
     getPatente(): string {
         return this.patente;
     }
+// setters
+public setPatente(): string{
+    return this.patente;}
 
-   
+
 }
