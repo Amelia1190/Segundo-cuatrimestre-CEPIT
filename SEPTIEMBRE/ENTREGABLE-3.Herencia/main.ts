@@ -79,7 +79,7 @@ let nuevaPatente: string = rls.question("Ingrese la nueva patente del vehículo:
 registro.modificarVehiculo(patenteAModificar, { patente: nuevaPatente });   // NO ME MODIFICA LA PATENTE.
 registro.nuevaPatente;
 
-// Console log para depuración
+
 console.log("Intentando modificar el vehículo con patente:", patenteAModificar);
 console.log("Nueva patente aplicada:", nuevaPatente);
 
