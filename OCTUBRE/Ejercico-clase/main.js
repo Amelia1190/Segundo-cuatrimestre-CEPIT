@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var autoCiudad_1 = require("./autoCiudad");
+var camioneta_1 = require("./camioneta");
+var miAuto = new autoCiudad_1.AutoCiudad("Toyota", "Corolla", 2023, 5, 100 * 8);
+var Hilux = new camioneta_1.camioneta("Toyota", "Hilux", 2020, 10);
+console.log("La capacidad del auto es:", miAuto);
+console.log("la capacidad de la camioneta es :", Hilux);
+var consumo = autoCiudad_1.AutoCiudad.calcularConsumo();
+console.log("Consumo:", consumo, "litros por kilómetro");
