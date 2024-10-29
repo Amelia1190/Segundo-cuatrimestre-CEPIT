@@ -1,43 +1,50 @@
 
 
 import { Personajes } from "./personajes";
+import { SapoRepulsivo } from "./SapoRepulsivo";
 //  const defVarita= "hsjsjs";
  
 export class mago extends Personajes {
-    atacar(): void {
-    }
-    defender(): void {
-    }
+  
  private cantidadHechizos: number;
  private  defVarita: string;
- private vida:number= -10;
+ private vida:number= 100;
+
   
 
     constructor(nombre: string, nivel: number, habilidades: string, cantidadHechizos: number, defVarita: string) {
         super(nombre, nivel, habilidades);
-         this.cantidadHechizos = 5;
-        this.defVarita= "Convierte en conejo"
+         this.cantidadHechizos = 500;
+        this.defVarita= "convierte en conejo"
     }
 
 
-// Atacar
-public  getatacar(){
-      console.log(`El mago ${this.nombre} lanza un hechizo poderoso!`)
+// // Atacar
+// public  getatacar(SapoRepulsivo:SapoRepulsivo){
+//       console.log(`El mago ${this.nombre} lanza un hechizo poderoso!`)
+//       SapoRepulsivo.recibirDaño(this.cantidadHechizos)
+//     }
 
-    }
 
- //Defender 
-public getdefender(){
-  console.log(`El mago ${this.nombre} se protege con su varita ${this.defVarita}.`);
-      }
-    public setdefender(defVarita: string){
-      this.defVarita= defVarita;
- }
-  // Metodo para ganar Experiencia
-  
-  recibirDaño(daño: number) {
-    this.vida = 0;
-    console.log(`${this.nombre} ha recibido ${daño} de daño. Vida restante: ${this.vida}`);
+
+  atacar(sapoRepulsivo:SapoRepulsivo): void {
+    console.log(`El mago ${this.nombre} lanza un hechizo poderoso  de ${this.cantidadHechizos} de alcance  a sapoRepulsivo destruyendolo casi completamente. `);
+   
   }
- }
+
+  defender(): void {
+    console.log(`El mago ${this.defVarita} al enemigo y se protege con su varita mágica creando una barrera energética alrededor de él.`);
+  }
+
+
+
+
+ recibirDano(daño: number) {
+     this.vida = 0;
+    console.log(`${this.nombre} ha recibido ${daño} de daño. Vida restante: ${this.vida}`);
+}
+}
+  
+
+
 

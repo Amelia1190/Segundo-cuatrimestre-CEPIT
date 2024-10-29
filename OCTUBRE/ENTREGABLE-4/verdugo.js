@@ -26,10 +26,6 @@ var verdugo = /** @class */ (function (_super) {
         _this.hachaDeVerdugo = "hacha de verdugo";
         return _this;
     }
-    verdugo.prototype.atacar = function () {
-    };
-    verdugo.prototype.defender = function () {
-    };
     // Atacar
     verdugo.prototype.getatacar = function () {
         return this.elementosTortura;
@@ -43,6 +39,17 @@ var verdugo = /** @class */ (function (_super) {
     };
     verdugo.prototype.setdefender = function (hachaDeVerdugo) {
         this.hachaDeVerdugo = hachaDeVerdugo;
+    };
+    //   METODOS
+    verdugo.prototype.atacar = function (objetivo) {
+        var danio = this.elementosTortura * 2;
+        objetivo.vida -= danio;
+        objetivo.estado = "intimidado";
+        console.log("".concat(this.nombre, " ataca a Conan con su ").concat(this.hachaDeVerdugo, " infligiendo ").concat(danio, " de da\u00F1o."));
+    };
+    verdugo.prototype.defender = function () {
+        this.defensa === 100;
+        console.log("El verdugo utiliza su arma final con un poder ".concat(this.elementosTortura, " dejando extinto al Conan. Su nivel de defensa se mantiene en 100. "));
     };
     return verdugo;
 }(personajes_1.Personajes));

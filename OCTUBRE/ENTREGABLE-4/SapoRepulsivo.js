@@ -22,17 +22,23 @@ var SapoRepulsivo = /** @class */ (function (_super) {
     function SapoRepulsivo(nombre, nivel, habilidades, veneno, colorCamuflaje, nivelDeNauseas) {
         if (nivelDeNauseas === void 0) { nivelDeNauseas = 22; }
         var _this = _super.call(this, nombre, nivel, habilidades) || this;
+        _this.colorCamuflaje = "amarillo brillante"; // Color para camuflarse
+        _this.vida = 50;
         _this.veneno = veneno;
         _this.colorCamuflaje = colorCamuflaje;
         _this.nivelDeNauseas = nivelDeNauseas;
         return _this;
     }
     SapoRepulsivo.prototype.atacar = function (Mago) {
-        console.log("".concat(this.nombre, " escupe un chorro de baba t\u00F3xica (").concat(this.veneno, ") a Gandalf"));
-        Mago.recibirDaño(this.veneno);
+        console.log("".concat(this.nombre, " escupe un chorro de baba t\u00F3xica de intensidad ").concat(this.veneno, " a Gandalf."));
+        Mago.recibirDano(this.veneno);
     };
     SapoRepulsivo.prototype.defender = function () {
-        console.log("".concat(this.colorCamuflaje, " utiliza su color amarillo brillante como una se\u00F1al de advertencia para sus depredadores. Su nivel de nauseas se mantiene en ").concat(this.nivelDeNauseas));
+        console.log("".concat(this.nombre, " y su  ").concat(this.colorCamuflaje, " lo utiliza  como una se\u00F1al de advertencia para sus depredadores. Su nivel de nauseas se mantiene en ").concat(this.nivelDeNauseas, "."));
+    };
+    SapoRepulsivo.prototype.recibirDano = function (daño) {
+        this.vida = 0;
+        console.log("".concat(this.nombre, " ha recibido ").concat(daño, " de da\u00F1o. Vida restante: ").concat(this.vida, "."));
     };
     return SapoRepulsivo;
 }(personajes_1.Personajes));

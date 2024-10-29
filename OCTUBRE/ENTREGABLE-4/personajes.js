@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Personajes = void 0;
 var Personajes = /** @class */ (function () {
+    //   sapoRepulsivo: any;
     function Personajes(nombre, nivel, habilidades) {
         if (nivel === void 0) { nivel = 1; }
         this.nombre = nombre;

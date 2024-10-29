@@ -4,6 +4,7 @@ export abstract class Personajes {
     protected nombre: string;
     protected nivel: number;
     protected habilidades: string;
+//   sapoRepulsivo: any;
    
 
     constructor(nombre: string, nivel: number = 1, habilidades: string) {
@@ -40,7 +41,7 @@ export abstract class Personajes {
         this.habilidades = habilidades;
     }
 
-abstract atacar(personaje): void;      // DECLARO EL METODO ATACAR Y DEFENDER.
+abstract atacar(Personajes): void     // DECLARO EL METODO ATACAR Y DEFENDER.
 abstract defender(): void;
 }
 

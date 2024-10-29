@@ -23,10 +23,12 @@ var caballero = /** @class */ (function (_super) {
         if (_experiencia === void 0) { _experiencia = 500; }
         if (_fuerzaEspada === void 0) { _fuerzaEspada = 10; }
         var _this = _super.call(this, nombre, nivel, habilidades) || this;
-        _this.experiencia = 5;
+        _this.experiencia = 500;
         _this.nivelEvolucion = "novato";
-        _this.fuerzaEspada = 1000;
+        _this.defensa = 150;
+        _this.fuerzaEspada = 50;
         _this.escudoDeAcero = "escudo potente";
+        _this.vida = 100;
         return _this;
     }
     // Atacar
@@ -43,17 +45,14 @@ var caballero = /** @class */ (function (_super) {
     caballero.prototype.setdefender = function (escudoDeAcero) {
         this.escudoDeAcero = escudoDeAcero;
     };
-    caballero.prototype.atacar = function () {
+    caballero.prototype.atacar = function (objetivo) {
+        var danio = this.fuerzaEspada * 2;
+        objetivo.vida -= danio;
+        console.log("".concat(this.nombre, " utiliza todo su poder para atacar a Ladydi, dejando con vida ").concat(objetivo.vida, ". La princesa recibe ").concat(danio, " puntos de da\u00F1o"));
     };
     caballero.prototype.defender = function () {
-    };
-    // METODO PARA EVOLUCIONAR
-    caballero.prototype.evolucionar = function () {
-        if (this.experiencia >= 1000) {
-            this.nivelEvolucion = "experto";
-            this.fuerzaEspada += 1000; // Aumenta la fuerza de la espada
-            this.experiencia = 10; // experiencia
-        }
+        this.defensa === 50;
+        console.log("Caballero utiliza su ".concat(this.escudoDeAcero, " para defenderse. Reduce ").concat(this.defensa, " puntos de da\u00F1o ante cualquier ataque del contrincante."));
     };
     return caballero;
 }(personajes_1.Personajes));

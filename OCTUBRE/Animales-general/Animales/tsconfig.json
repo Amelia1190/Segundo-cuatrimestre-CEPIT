@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "target": "ES2020", 
+      "lib": ["ES2020", "dom"],  // Incluye la biblioteca 'dom' para permitir el uso de 'console'
+      "module": "commonjs",      
+      "strict": true,            
+      "esModuleInterop": true
+    }
+  }
+  

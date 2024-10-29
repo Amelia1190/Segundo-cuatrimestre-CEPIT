@@ -22,28 +22,23 @@ var mago = /** @class */ (function (_super) {
     __extends(mago, _super);
     function mago(nombre, nivel, habilidades, cantidadHechizos, defVarita) {
         var _this = _super.call(this, nombre, nivel, habilidades) || this;
-        _this.vida = -10;
-        _this.cantidadHechizos = 5;
-        _this.defVarita = "Convierte en conejo";
+        _this.vida = 100;
+        _this.cantidadHechizos = 500;
+        _this.defVarita = "convierte en conejo";
         return _this;
     }
-    mago.prototype.atacar = function () {
+    // // Atacar
+    // public  getatacar(SapoRepulsivo:SapoRepulsivo){
+    //       console.log(`El mago ${this.nombre} lanza un hechizo poderoso!`)
+    //       SapoRepulsivo.recibirDaño(this.cantidadHechizos)
+    //     }
+    mago.prototype.atacar = function (sapoRepulsivo) {
+        console.log("El mago ".concat(this.nombre, " lanza un hechizo poderoso  de ").concat(this.cantidadHechizos, " de alcance  a sapoRepulsivo destruyendolo casi completamente. "));
     };
     mago.prototype.defender = function () {
+        console.log("El mago ".concat(this.defVarita, " al enemigo y se protege con su varita m\u00E1gica creando una barrera energ\u00E9tica alrededor de \u00E9l."));
     };
-    // Atacar
-    mago.prototype.getatacar = function () {
-        console.log("El mago ".concat(this.nombre, " lanza un hechizo poderoso!"));
-    };
-    //Defender 
-    mago.prototype.getdefender = function () {
-        console.log("El mago ".concat(this.nombre, " se protege con su varita ").concat(this.defVarita, "."));
-    };
-    mago.prototype.setdefender = function (defVarita) {
-        this.defVarita = defVarita;
-    };
-    // Metodo para ganar Experiencia
-    mago.prototype.recibirDaño = function (daño) {
+    mago.prototype.recibirDano = function (daño) {
         this.vida = 0;
         console.log("".concat(this.nombre, " ha recibido ").concat(daño, " de da\u00F1o. Vida restante: ").concat(this.vida));
     };
